@@ -1,4 +1,4 @@
-package org.example.business;
+package org.example.business.concretes;
 
 import org.example.dataAccess.abstracts.InvoiceDao;
 import org.example.entities.Invoice;
@@ -14,5 +14,13 @@ public class InvoiceManager {
 
     public List<Invoice> getInvoices() {
         return invoiceDao.getInvoices();
+    }
+    public List<Invoice> getOverAmountInvoices(){
+        return invoiceDao.getOverAmountInvoices();
+
+    }
+    public double getAvarageOverAmountInvoices(){
+        return invoiceDao.getAvarageOverAmountInvoices();
+
     }
 }
