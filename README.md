@@ -6,6 +6,7 @@ Java Maven Project.
 <li>Maven </li>
 <li>Stream API</li>
 <h1>Installation</h1>
-git clone 
+git clone https://github.com/ozgeaktas/OrderApp.git
 <h1>Outputs</h1>
+
 ![Ekran Görüntüsü (851)](https://user-images.githubusercontent.com/54955167/214852373-e8b1692a-f14c-4c8a-97fb-c2818e64dfc0.png)
