@@ -20,16 +20,20 @@ public class InMemoryInvoice implements InvoiceDao {
         }};
     }
 
+    //List of invoices
     public List<Invoice> getInvoices() {
         return this.invoices;
 
     }
 
+
+    //List of invoices over 1500
     @Override
     public List<Invoice> getOverAmountInvoices() {
         return invoices.stream().filter(invoice -> invoice.getAmount() >1500).collect(Collectors.toList());
     }
 
+    //average of invoices over 1500
     @Override
     public double getAvarageOverAmountInvoices() {
         return invoices.stream().filter(invoice -> invoice.getAmount() >1500).mapToDouble(Invoice::getAmount).average().orElse(0);

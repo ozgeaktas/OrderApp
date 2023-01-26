@@ -34,27 +34,32 @@ public class InMemoryCustomer implements CustomerDao {
 
     }
 
+    //List of customer
     @Override
     public List<Customer> getCustomers() {
         return this.customers;
     }
 
+    //List of customer name with C
     @Override
     public List<Customer> getCustomerWithC() {
         return customers.stream().filter(customer -> customer.getName().startsWith("C")).collect(Collectors.toList());
     }
 
+    //total amount of invoices of customer whor registered in June
     @Override
     public double getCustomerInJuneTotalInvoice() {
         return customers.stream().filter(customer -> customer.getRegistrationDate().getMonthValue()==6).flatMap(customer->customer.getInvoices().stream()).mapToDouble(Invoice::getAmount).sum();
     }
 
     // anyMatch() method checked whether there is an invoice of less than 500TL in the customer's invoice list.
+    //List of name of customes with invoices under 500
     @Override
     public List<String> getNameOverInvoices() {
         return customers.stream().filter(customer -> customer.getInvoices().stream().anyMatch(invoice -> invoice.getAmount() <500)).map(Customer::getName).collect(Collectors.toList());
     }
 
+    //List of Sector name
     @Override
     public Map<String, List<Customer>> getSectorName() {
         return customers.stream().
